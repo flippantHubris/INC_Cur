@@ -1,0 +1,272 @@
+$card-padding: 15px;
+$card-bg-color: white;
+$element-top-margin: 10px;
+$element-bottom-margin : 10px;
+
+$card-link-color: white;
+
+$card-border-radius: 15px;
+
+
+$card-link-color-light: white;
+
+$social-buttons-hover-color: color("teal", "lighten-2");
+
+
+// .card-panel {
+//   transition: box-shadow .25s;
+//   padding: $card-padding;
+//   margin: $element-top-margin 0 $element-bottom-margin 0;
+//   border-radius: 2px;
+//   @extend .z-depth-1;
+//   background-color: $card-bg-color;
+// }
+
+.my-card {
+  position: relative;
+  margin: $element-top-margin 0 $element-bottom-margin 0;
+  background-color: $card-bg-color;
+  transition: box-shadow .25s;
+  border-radius: $card-border-radius;
+  @extend .z-depth-1;
+
+
+  .img-section{
+      border-radius: $card-border-radius $card-border-radius 0 0;
+      background-color: color("teal", "lighten-4");
+  }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: 300;
+    &.activator {
+      cursor: pointer;
+    }
+  }
+
+  // Card Sizes
+  &.small, &.medium, &.large {
+    position: relative;
+
+    .card-image {
+      max-height: 60%;
+      overflow: hidden;
+    }
+    .card-content {
+      max-height: 40%;
+      overflow: hidden;
+    }
+    .card-action {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &.small {
+    height: 300px;
+  }
+
+  &.medium {
+    height: 400px;
+  }
+
+  &.large {
+    height: 500px;
+  }
+
+
+  .card-image {
+    position: relative;
+
+    // Image background for content
+    img {
+      display: block;
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .card-title {
+      color: $card-bg-color;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: $card-padding;
+    }
+
+  }
+
+
+  ul.social-buttons li a {
+    display: block;
+
+    background-color: color("blue-grey", "darken-1");
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    color: white;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
+    padding-bottom: 30px;
+  }
+  ul.social-buttons li a:hover,
+  ul.social-buttons li a:focus,
+  ul.social-buttons li a:active {
+    background-color: $social-buttons-hover-color;
+  }
+
+
+
+  .card-social {
+
+      li {
+        display: inline-block;
+         padding-right: 5px;
+         padding-left: 5px;
+         padding-bottom: 10px;
+
+          a{
+            display: block;
+            background-color: color("blue-grey", "darken-1");
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            font-size: 20px;
+            line-height: 40px;
+            color: #fff;
+            outline: 0;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            transition: all .3s;
+
+              i{
+                color: white;
+              }
+              .my-twitter{
+                padding-left: 3px;
+                padding-top: 10px;
+              }
+          }
+
+          a:hover,
+          a:focus,
+          a:active,
+          a.active {
+            color: $social-buttons-hover-color;
+          }
+      }
+  }
+
+  .card-content {
+    padding: $card-padding;
+    border-radius: $card-border-radius;
+
+    p {
+      margin: 0;
+      color: inherit;
+    }
+    .card-title {
+      line-height: 48px;
+    }
+  }
+
+  .card-bottom {
+
+    position: relative;
+    background-color: color("teal", "lighten-4");
+    border-top: 1px solid rgba(160,160,160,.2);
+    padding-bottom: 1px;
+    z-index: 2;
+    border-radius: 0 0 $card-border-radius $card-border-radius;
+
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
+      color: $card-link-color;
+      margin-right: $card-padding;
+      transition: color .3s ease;
+      text-transform: uppercase;
+
+      &:hover { color: $card-link-color-light; }
+    }
+
+    & + .card-reveal {
+      z-index: 1;
+      padding-bottom: 64px;
+    }
+  }
+
+.card-section {
+  position: relative;
+  background-color: color("teal", "lighten-5");
+  border-top: 1px solid rgba(160,160,160,.2);
+  padding: $card-padding;
+  z-index: 2;
+  color: color("blue-grey", "darken-2");
+
+  a:not(.btn):not(.btn-large):not(.btn-floating) {
+    color: color("light-blue", "darken-4");
+    margin-right: $card-padding;
+    transition: color .3s ease;
+    font-weight: bold;
+
+    &:hover { color: $card-link-color-light; }
+  }
+
+  & + .card-reveal {
+    z-index: 1;
+    padding-bottom: 64px;
+  }
+}
+
+
+.card-action {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,.2);
+  padding: $card-padding;
+  z-index: 2;
+  border-radius: 0 0 $card-border-radius $card-border-radius;
+
+  a:not(.btn):not(.btn-large):not(.btn-floating) {
+    color: $card-link-color;
+    margin-right: $card-padding;
+    transition: color .3s ease;
+    text-transform: uppercase;
+
+    &:hover { color: $card-link-color-light; }
+  }
+
+  & + .card-reveal {
+    z-index: 1;
+    padding-bottom: 64px;
+  }
+}
+
+
+  .card-reveal {
+    padding: $card-padding;
+    position: absolute;
+    background-color: $card-bg-color;
+    width: 100%;
+    overflow-y: auto;
+    top: 100%;
+    height: 100%;
+    z-index: 3;
+    display: none;
+
+    .card-title {
+      cursor: pointer;
+      display: block;
+    }
+  }
+}
